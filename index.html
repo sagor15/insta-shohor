@@ -142,44 +142,23 @@
             data-bs-parent="#accordionFlushExample"
           >
             <div class="accordion-body">
-              Placeholder content for this accordion, which is intended to demonstrate the
-              <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine
-              this being filled with some actual content.
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingThree">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseThree"
-              aria-expanded="false"
-              aria-controls="flush-collapseThree"
-            >
-              Q3. Difference between local storage and session storage.
-            </button>
-          </h2>
-          <div
-            id="flush-collapseThree"
-            class="accordion-collapse collapse"
-            aria-labelledby="flush-headingThree"
-            data-bs-parent="#accordionFlushExample"
-          >
-            <div class="accordion-body">
-              Placeholder content for this accordion, which is intended to demonstrate the
-              <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more
-              exciting happening here in terms of content, but just filling up the space to make it look, at
-              least at first glance, a bit more representative of how this would look in a real-world
-              application.
+              javascript event loop যা করে তা সহজ করে বলার চেষ্টা করছি । আমরা যখন javascript কোড লিখি তখন আমরা
+              web browser বা কোড ইডিটর এ রান করে থাকি । কোড টা রান করার সময় web browser এ engine এর মাধ্যমে
+              machine language এ রুপান্তর করে । দরে নেই আমরা chorme browser এর v8 engine দিয়ে রান করছি । আর v8
+              engine দুইটা পার্ট হচ্ছে Heap ও আরেকটা হচ্ছে Call Stack আর Call Stack (lifo=last in fast out)
+              হিসেবে কাজ করে । Call Stack টা হচ্ছে javascript কোড এ যখন কনো function কে Call করি তখন Call
+              Stack এসে জমতে থাকে এবং synchronous ভাবে দিতে থাকে । আর কিছু asynchronous রয়েছে যেমনঃ setTimeout
+              function কে Call করি তখন সেটা কে সরিয়ে রাখে বলে বাবু একটু পর তুমাকে Call করব মানে waiting রাখে
+              এখন প্রশ্ন টা হল রাখে কথায় রাখে হচ্ছে web api / c++ api তে ।রাখার পর web api সেই function কে
+              পাটিয়ে দেয় হচ্ছে Callback Queue এর কাছে আর Callback Queue (fifo= fast in fast out ) কাজ করে থাকে
+              । আমরা এতো খন পরজন্নতো জাই করি না কেন Call Stack কিন্ত এখনো Call করে নাই Call না করলে কিন্ত কনো
+              কাজ করবে না তাই Call Stack এ Call করার কাজ টা করে হচ্ছে event loop ।
             </div>
           </div>
         </div>
       </div>
-      <h2></h2>
-      <p></p>
     </section>
+
     <footer></footer>
 
     <!-- add javascript  file  -->
