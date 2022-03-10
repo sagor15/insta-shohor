@@ -37,6 +37,7 @@ const switchTab = (id) => {
         document.getElementById( "posts" ).style.display = "grid";
         document.getElementById( "liked" ).style.display = "none";
         document.getElementById( "reported" ).style.display = "none";
+        document.getElementById('question-part').style.display = 'block';
     } else if (id === "liked") {
         document.getElementById( "liked" ).style.display = "block";
         document.getElementById( "posts" ).style.display = "none";
@@ -136,8 +137,10 @@ const createPost = (post) => {
 };
 
 const showPosts = (posts) => {
+  document.getElementById('question-part').style.display = 'block';
     const productsContainer = document.getElementById( "posts" );
     productsContainer.innerHTML = "";
+    
 
     posts.forEach((post) => {
         const div = createPost(post);
@@ -146,7 +149,10 @@ const showPosts = (posts) => {
 };
 
 const displayLikedPosts = () => {
+  document.getElementById('question-part').style.display = 'none';
    document.getElementById( "liked" ).innerHTML = "";
+ 
+  
     const likedPosts = getLikedPosts();
     likedPosts.forEach((post) => {
         const div = createPost(post);
@@ -156,6 +162,7 @@ const displayLikedPosts = () => {
 
 const displayReportedPosts = () => {
   document.getElementById( "reported" ).innerHTML = "";
+  document.getElementById('question-part').style.display = 'none';
     const reportedPosts = getReportedPosts();
     reportedPosts.forEach((post) => {
         const div = createPost(post);
